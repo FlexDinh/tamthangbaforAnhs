@@ -105,7 +105,7 @@ body {
   background: radial-gradient(circle, #f48fb1, #ad1457);
   top: -20%;
   left: -15%;
-  animation-duration: 18s;
+  animation-duration: 30s;
 }
 
 .blob-2 {
@@ -114,8 +114,8 @@ body {
   background: radial-gradient(circle, #ffd54f, #f06292);
   bottom: -10%;
   right: -10%;
-  animation-duration: 22s;
-  animation-delay: -8s;
+  animation-duration: 36s;
+  animation-delay: -14s;
 }
 
 .blob-3 {
@@ -124,8 +124,8 @@ body {
   background: radial-gradient(circle, #ce93d8, #e91e8c);
   top: 40%;
   left: 30%;
-  animation-duration: 15s;
-  animation-delay: -4s;
+  animation-duration: 28s;
+  animation-delay: -10s;
 }
 
 @keyframes blobFloat {
@@ -361,7 +361,7 @@ body {
   }
 
   14% {
-    transform: scale(1.2);
+    transform: scale(1.06);
   }
 
   28% {
@@ -369,7 +369,7 @@ body {
   }
 
   42% {
-    transform: scale(1.1);
+    transform: scale(1.04);
   }
 
   56% {
@@ -1033,7 +1033,6 @@ section {
   font-size: 2.8rem;
   margin-bottom: 0.9rem;
   display: block;
-  animation: flameDance 3s ease-in-out infinite;
   transition: transform 0.3s;
   will-change: transform;
 }
@@ -1385,5 +1384,59 @@ section {
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── TOUCH DEVICE: remove shake-prone animations ── */
+@media (hover: none) {
+
+  /* Kill emoji ring wobble */
+  .emoji-ring span {
+    animation: none !important;
+  }
+
+  /* Kill hero flower / footer hearts bounce */
+  .hero-heart,
+  .footer-hearts span {
+    animation: none !important;
+  }
+
+  /* Kill section emoji spin */
+  .wishes-spin {
+    animation: none !important;
+  }
+
+  /* Kill date dot blink (subtle) */
+  .date-dot {
+    animation: none !important;
+    opacity: 1;
+  }
+
+  /* Kill music pulse ring */
+  .music-btn.playing {
+    animation: none !important;
+  }
+
+  /* Slow down blobs even further */
+  .blob-1 {
+    animation-duration: 45s !important;
+  }
+
+  .blob-2 {
+    animation-duration: 55s !important;
+  }
+
+  .blob-3 {
+    animation-duration: 42s !important;
+  }
+
+  /* Keep promise flames static */
+  .promise-flame {
+    animation: none !important;
+  }
+
+  /* Scroll dot static */
+  .scroll-dot {
+    animation: none !important;
   }
 }
