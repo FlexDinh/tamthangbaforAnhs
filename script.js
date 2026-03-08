@@ -99,9 +99,7 @@ const COUPLE_START = new Date(2024, 0, 1);
   const bodyEl = document.getElementById('letterBody');
 
   const LETTER_PARAGRAPHS = [
-    'Hôm nay là ngày dành riêng cho những người phụ nữ tuyệt vời — và trong trái tim anh, em chính là người tuyệt vời nhất thế gian này.',
-    'Em không chỉ là một phần trong cuộc sống của anh, em là cuộc sống ấy. Mỗi nụ cười của em là ánh bình minh sưởi ấm ngày anh. Mỗi cái nắm tay là lời nhắc nhở rằng anh đang ở đúng nơi mình cần ở.',
-    'Anh yêu cái cách em cau mày khi suy nghĩ, cái cách em cười khúc khích vì những điều nhỏ nhặt, và cả những lúc em giả vờ giận mà khóe miệng vẫn cong lên chực cười. 🥰',
+    'Hôm nay là ngày dành riêng cho những người phụ nữ tuyệt vời — và trong trái tim anh, em chính là người tuyệt vời .',
     'Ngày 8/3 này, anh muốn nói với em rằng: Em xứng đáng được yêu thương, được trân trọng, được hạnh phúc — không chỉ hôm nay, mà mỗi ngày trong cuộc đời này.',
   ];
 
@@ -441,9 +439,9 @@ const COUPLE_START = new Date(2024, 0, 1);
     p.className = 'petal';
     p.textContent = FLOWERS[0 | (Math.random() * FLOWERS.length)];
     const left = Math.random() * 100;
-    const dur = (Math.random() * 9 + 7).toFixed(1);
-    const delay = (Math.random() * 14).toFixed(1);
-    const drift = ((Math.random() - 0.5) * 80).toFixed(0);
+    const dur = (Math.random() * 20 + 20).toFixed(1);
+    const delay = (Math.random() * 20).toFixed(1);
+    const drift = ((Math.random() - 0.5) * 30).toFixed(0);
     p.style.cssText = `left:${left}%;animation-duration:${dur}s;animation-delay:-${delay}s;--drift:${drift}px`;
     container.appendChild(p);
   }
