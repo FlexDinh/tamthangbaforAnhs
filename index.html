@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#3d0030" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Chúc Mừng 8/3 Yêu Thương 💖</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@500;600;700&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Liquid gradient blobs -->
+    <div class="bg-liquid" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Particle canvas: floating hearts -->
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+    <!-- Music button (bottom-right) -->
+    <button class="music-btn" id="musicBtn" aria-label="Bat / Tat nhac" title="Nhac nen">
+        <span class="music-icon">&#127925;</span>
+    </button>
+    <audio id="bgMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+        <div class="hero-ribbon" aria-hidden="true">
+            <span>&#127800; Chuc Mung Ngay Quoc Te Phu Nu 8/3 &#127800; &nbsp;&nbsp; Yeu Em Mai Mai &#128150;
+                &nbsp;&nbsp; </span>
+            <span aria-hidden="true">&#127800; Chuc Mung Ngay Quoc Te Phu Nu 8/3 &#127800; &nbsp;&nbsp; Yeu Em Mai Mai
+                &#128150; &nbsp;&nbsp; </span>
+        </div>
+
+        <div class="hero-body">
+            <div class="date-pill">
+                <span class="date-dot"></span>
+                8 · 3 · 2026
+            </div>
+
+            <h1 class="hero-title">
+                <span class="hero-to">Gửi đến</span>
+                <span class="hero-name">Bé Ánh</span>
+                <span class="hero-heart">🌺</span>
+            </h1>
+
+            <p class="hero-sub">Một ngày thật đặc biệt dành riêng cho bé ✨</p>
+
+            <div class="hero-cta">
+                <button class="btn-primary" id="openLetter">
+                    💌 Mở Thư Tình
+                </button>
+                <a href="#messages" class="btn-secondary">
+                    🌸 Lời Yêu Thương
+                </a>
+            </div>
+
+            <div class="emoji-ring" aria-hidden="true">
+                <span style="--i:0">🌸</span>
+                <span style="--i:1">💖</span>
+                <span style="--i:2">🌷</span>
+                <span style="--i:3">✨</span>
+                <span style="--i:4">🌺</span>
+                <span style="--i:5">💗</span>
+                <span style="--i:6">🌹</span>
+                <span style="--i:7">🎀</span>
+            </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+            <div class="scroll-dot"></div>
+            <span>Cuộn xuống</span>
+        </div>
+    </section>
+
+    <!-- ============ LETTER MODAL ============ -->
+    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true">
+        <div class="letter-card" id="letterCard">
+            <button class="close-btn" id="closeModal" aria-label="Dong">✕</button>
+            <div class="wax-seal" aria-hidden="true">💌</div>
+            <div class="letter-inner">
+                <p class="letter-date">Ngày 8 tháng 3 năm 2026</p>
+                <h2 class="letter-greeting">Bé yêu ơi,</h2>
+                <div class="letter-body" id="letterBody"></div>
+                <p class="letter-closing">Mãi mãi là của em, với tất cả trái tim anh,</p>
+                <p class="letter-sig">Người luôn yêu em ❤️</p>
+            </div>
+            <div class="modal-petals" aria-hidden="true">
+                <span>🌸</span><span>🌺</span><span>🌷</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MESSAGES ============ -->
+    <section class="messages-section" id="messages">
+        <div class="section-head">
+            <span class="section-emoji">💬</span>
+            <h2>Những điều anh muốn nói</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="cards-grid">
+            <article class="msg-card glass-card" tabindex="0">
+                <div class="card-glow"></div>
+                <div class="card-icon">💖</div>
+                <h3>Bé thật xinh đẹp</h3>
+                <p></p>
+                <div class="card-sparkle" aria-hidden="true">✨</div>
+            </article>
+            <article class="msg-card glass-card" tabindex="0">
+                <div class="card-glow"></div>
+                <div class="card-icon">🌟</div>
+                <h3>Bé là một phần động lực</h3>
+                <p></p>
+                <div class="card-sparkle" aria-hidden="true">💫</div>
+            </article>
+            <article class="msg-card glass-card" tabindex="0">
+                <div class="card-glow"></div>
+                <div class="card-icon">🤝</div>
+                <h3>Bên bé là đủ</h3>
+                <p>Một ngày có mệt mỏi bao nhiêu, bên bé là đủ</p>
+                <div class="card-sparkle" aria-hidden="true">🌸</div>
+            </article>
+            <article class="msg-card glass-card" tabindex="0">
+                <div class="card-glow"></div>
+                <div class="card-icon">🌺</div>
+                <h3>Bé mạnh mẽ lắm</h3>
+                <p>Bé chăm chỉ và giỏi giang. Điều đó làm anh ngưỡng mộ và tự hào về bé vô cùng.</p>
+                <div class="card-sparkle" aria-hidden="true">💝</div>
+            </article>
+            <article class="msg-card glass-card" tabindex="0">
+                <div class="card-glow"></div>
+                <div class="card-icon">🎁</div>
+                <h3>Mỗi ngày là món quà</h3>
+                <p>Mỗi buổi sáng thức dậy thấy bé là một hạnh phúc của anh ắ</p>
+                <div class="card-sparkle" aria-hidden="true">🎀</div>
+            </article>
+            <article class="msg-card glass-card" tabindex="0">
+                <div class="card-glow"></div>
+                <div class="card-icon">♾️</div>
+                <h3>Yêu em</h3>
+                <p></p>
+                <div class="card-sparkle" aria-hidden="true">✨</div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ============ LOVE UNIVERSE ============ -->
+    <section class="universe-section" id="universe">
+        <div class="universe-bg-orb u-orb-1" aria-hidden="true"></div>
+        <div class="universe-bg-orb u-orb-2" aria-hidden="true"></div>
+        <div class="universe-content">
+            <div class="section-head">
+                <span class="section-emoji">🌌</span>
+                <h2>Vũ Trụ Tình Yêu</h2>
+                <p class="universe-sub">Chạm vào những ngôi sao để khám phá lý do anh yêu em ✨</p>
+            </div>
+            <canvas id="universeCanvas" aria-label="Bầu trời sao tình yêu"></canvas>
+            <div id="starMessage" class="star-message" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <!-- ============ LOVE PROMISES ============ -->
+    <section class="promises-section" id="promises">
+        <div class="section-head">
+            <span class="section-emoji">�️</span>
+            <h2>Những Điều Anh Hứa</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="promises-grid">
+            <div class="promise-card glass-card" data-delay="0">
+                <div class="promise-flame">🌹</div>
+                <h3>Luôn ở bên em</h3>
+                <p>Dù ngày vui hay ngày buồn, anh sẽ là người đầu tiên em tìm đến và người cuối cùng em cần.</p>
+                <div class="promise-glow"></div>
+            </div>
+            <div class="promise-card glass-card" data-delay="100">
+                <div class="promise-flame">💫</div>
+                <h3>Yêu em mỗi ngày</h3>
+                <p>Không phải chỉ những ngày đặc biệt — mà cả những sáng thứ Hai bình thường nhất, anh vẫn chọn yêu em.
+                </p>
+                <div class="promise-glow"></div>
+            </div>
+            <div class="promise-card glass-card" data-delay="200">
+                <div class="promise-flame">�</div>
+                <h3>Lắng nghe em</h3>
+                <p>Mọi câu chuyện của em, dù nhỏ hay lớn, anh đều muốn nghe — vì giọng em kể là điều anh yêu thích nhất.
+                </p>
+                <div class="promise-glow"></div>
+            </div>
+            <div class="promise-card glass-card" data-delay="300">
+                <div class="promise-flame">☀️</div>
+                <h3>Làm em cười</h3>
+                <p>Anh hứa sẽ cố hết sức để mỗi ngày của em có ít nhất một khoảnh khắc thật sự vui – dù chỉ vì anh làm
+                    trò ngốc.</p>
+                <div class="promise-glow"></div>
+            </div>
+            <div class="promise-card glass-card" data-delay="400">
+                <div class="promise-flame">�</div>
+                <h3>Tôn trọng em</h3>
+                <p>Em có ước mơ, có lựa chọn riêng của em — anh sẽ là người cổ vũ nhiệt tình nhất và không bao giờ kìm
+                    hãm em.</p>
+                <div class="promise-glow"></div>
+            </div>
+            <div class="promise-card glass-card" data-delay="500">
+                <div class="promise-flame">♾️</div>
+                <h3>Mãi mãi là của nhau</h3>
+                <p>Đây không chỉ là lời hứa — đây là sự lựa chọn anh đưa ra mỗi ngày khi thức dậy và thấy em bên cạnh.
+                </p>
+                <div class="promise-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WISHES ============ -->
+    <section class="wishes-section" id="wishes">
+        <div class="wishes-inner">
+            <div class="wish-aura" aria-hidden="true"></div>
+            <div class="section-head">
+                <span class="section-emoji wishes-spin">✨</span>
+                <h2>Lời Chúc Ngày 8/3</h2>
+            </div>
+            <blockquote class="wish-quote glass-card">
+                <span class="q-open">"</span>
+                Chúc em luôn tỏa sáng, luôn hạnh phúc,<br />
+                và biết rằng em được yêu thương nhiều hơn<br />
+                bất kỳ lời nào có thể diễn đạt.
+                <span class="q-close">"</span>
+            </blockquote>
+
+            <button class="confetti-btn" id="confettiBtn">
+                🎊 Tung hoa ăn mừng!
+            </button>
+        </div>
+        <div class="petal-rain" id="petalRain" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer-hearts" aria-hidden="true">
+            <span>❤️</span><span>🌹</span><span>❤️</span>
+        </div>
+        <p>Làm với ❤️ riêng cho em · 8/3/2026</p>
+        <p class="footer-small">Chạm vào màn hình bất kỳ đâu để nhận yêu thương 💖</p>
+    </footer>
+
+    <!-- Confetti canvas overlay -->
+    <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
